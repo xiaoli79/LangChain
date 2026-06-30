@@ -23,6 +23,14 @@ parser = StrOutputParser()
 # print(parser.invoke(result))
 
 # 定义链
+# LCEL其实是一种编排解决方案，它可以使用LangChain能够以优化的方式处理链的运行时执行。任何
+# 两个Runnable实例都可以在“链”上一起成序列。上一个可运行对象的.invoke()调用的输出作为输入
+# 传递给下一个可运行对象。方法就是使用 |
+# 第一种方式
 chain = model | parser
+# 第二种方式
+# chain = RunnableSequence(first= model,last = parser)
+# 第三种方式
+# chain = model.pipe(chain)
 # 执行链  所有执行的动作全部交给链条来进行执行
 print(chain.invoke(messages))
