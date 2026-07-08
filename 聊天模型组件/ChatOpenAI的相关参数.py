@@ -4,7 +4,7 @@ from langchain_openai import ChatOpenAI
 
 # 定义模型
 model = ChatOpenAI(
-    model="deepseek-chat",
+    model="glm-4-flash",
     # 温度范围是0~2 ~~ 温度越高，AI回复的内容天马行空温度越低，答案越保护
     # 0.1 ~0.5 轻微变化~~ 技术文档、写作
     # 0.5~1    平衡创意~~ 对话、稍微创意的写作
