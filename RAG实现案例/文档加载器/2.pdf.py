@@ -13,4 +13,4 @@ print(f"第二页文本的内容(前200)是：\n{docs[1].page_content[:200]}\n")
 print(f"第二页的元数据字典是：\n{docs[1].metadata}\n")
 # PDF加载器将文本加载进来了，图片呢？
 print(f"第三页文本的内容(前200)是：\n{docs[2].page_content[:200]}\n")
-print(f"第三页的元数据字典是：\n{docs[2].metadata}\n")
+print(f"第三页的q元数据字典是：\n{docs[2].metadata}\n")
