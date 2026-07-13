@@ -21,7 +21,7 @@ example_prompt = PromptTemplate.from_template("Input:{input}\nOutPut:{output}")
 example_selector = MaxMarginalRelevanceExampleSelector.from_examples(
     examples,                # 示例集
     embeddings,              # 使用智谱嵌入模型度量语义相似度
-    Chroma,                  # 存储向量，向量数据库
+    Chroma,                  # 存储向量，向量存储
     k=4,                     # 生成示例的数量
 )
 
