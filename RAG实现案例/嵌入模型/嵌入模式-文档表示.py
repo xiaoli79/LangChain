@@ -1,7 +1,6 @@
 from langchain_community.document_loaders import UnstructuredMarkdownLoader
+from langchain_community.embeddings import ZhipuAIEmbeddings
 from langchain_text_splitters import CharacterTextSplitter
-from langchain_zhipu import ZhipuAIEmbeddings
-from numba.core.cgutils import printf
 
 embeddings = ZhipuAIEmbeddings(
     model="embedding-3"
@@ -9,11 +8,13 @@ embeddings = ZhipuAIEmbeddings(
 md_loader = UnstructuredMarkdownLoader(
 
     file_path="../../Docs/markdown/脚手架级微服务租房平台Q&A.md",
-    # mode="single"                #MD加载器默认将文档加载为一个
-    mode="elements"                #拆分成不同子块
+    mode="single"                #MD加载器默认将文档加载为一个
+    #mode="elements"                #拆分成不同子块
 )
 
 docs = md_loader.load()
+
+
 
 # tiktoken 分词器
 text_splitter = CharacterTextSplitter.from_tiktoken_encoder(
