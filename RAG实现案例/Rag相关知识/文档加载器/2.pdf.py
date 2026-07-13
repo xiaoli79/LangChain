@@ -2,7 +2,7 @@ from langchain_community.document_loaders import PyPDFLoader
 
 # 加载pdf总数
 # pdf加载器并不能识别图片中的内容
-loader = PyPDFLoader(file_path="../../Docs/pdf/脚手架级微服务租房平台Q&A.pdf")
+loader = PyPDFLoader(file_path="../../../Docs/pdf/脚手架级微服务租房平台Q&A.pdf")
 docs = loader.load()
 
 print(f"PDF文档总数: {len(docs)}\n")

@@ -2,7 +2,7 @@ from langchain_community.document_loaders import UnstructuredMarkdownLoader
 from langchain_text_splitters import  RecursiveCharacterTextSplitter
 
 md_loader = UnstructuredMarkdownLoader(
-    file_path="../../Docs/markdown/脚手架级微服务租房平台Q&A.md",
+    file_path="../../../Docs/markdown/脚手架级微服务租房平台Q&A.md",
 )
 
 data = md_loader.load()

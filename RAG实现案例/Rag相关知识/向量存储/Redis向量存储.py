@@ -28,7 +28,7 @@ vector_store = RedisVectorStore(
 
 md_loader = UnstructuredMarkdownLoader(
 
-    file_path="../../Docs/markdown/脚手架级微服务租房平台Q&A.md",
+    file_path="../../../Docs/markdown/脚手架级微服务租房平台Q&A.md",
     mode="single"                #MD加载器默认将文档加载为一个
 )
 
@@ -65,32 +65,32 @@ print(f"前三个索引是:{ids[:3]}")
 
 # 全量删除
 # vector_store.index.delete(drop=True)
-filter_condition = (Tag("category") == "QA") & (Num("num") > 6)
-# 带分数的检索
-search_docs_results = vector_store.similarity_search_with_score(
-    query="项目介绍",
-    k=2,
-    filter=filter_condition
-)
-
-# MMR搜索,基于语义搜索,先筛选出一批文档,然后进行排序输出
-search_docs = vector_store.max_marginal_relevance_search(
-    query="项目介绍",
-    k=2,
-    filter=filter_condition,
-    fetch_k=10,
-)
-
-# for doc,score in search_docs_results:
+# filter_condition = (Tag("category") == "QA") & (Num("num") > 6)
+# # 带分数的检索
+# search_docs_results = vector_store.similarity_search_with_score(
+#     query="项目介绍",
+#     k=2,
+#     filter=filter_condition
+# )
+#
+# # MMR搜索,基于语义搜索,先筛选出一批文档,然后进行排序输出
+# search_docs = vector_store.max_marginal_relevance_search(
+#     query="项目介绍",
+#     k=2,
+#     filter=filter_condition,
+#     fetch_k=10,
+# )
+#
+# # for doc,score in search_docs_results:
+# #     print("*" * 30)
+# #     print(f"文档分数:{score}")
+# #     print(f"文档内容:{doc.page_content}")
+# #     print(f"文档元数据:{doc.metadata}")
+#
+# for doc in search_docs:
 #     print("*" * 30)
-#     print(f"文档分数:{score}")
 #     print(f"文档内容:{doc.page_content}")
 #     print(f"文档元数据:{doc.metadata}")
-
-for doc in search_docs:
-    print("*" * 30)
-    print(f"文档内容:{doc.page_content}")
-    print(f"文档元数据:{doc.metadata}")
 
 
 

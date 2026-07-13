@@ -14,7 +14,7 @@ vector_store = InMemoryVectorStore(embedding = embeddings)
 
 md_loader = UnstructuredMarkdownLoader(
 
-    file_path="../../Docs/markdown/脚手架级微服务租房平台Q&A.md",
+    file_path="../../../Docs/markdown/脚手架级微服务租房平台Q&A.md",
     mode="single"                #MD加载器默认将文档加载为一个
 )
 
